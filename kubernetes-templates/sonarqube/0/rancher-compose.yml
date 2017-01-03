@@ -19,13 +19,6 @@
       default: "6.2"
       type: "string"
 
-    - variable: "JDBC_URL"
-      description: "Database JDBC URL"
-      label: "Database JDBC URL"
-      required: true
-      default: "jdbc:mysql://dbhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true"
-      type: "string"
-
     - variable: "JDBC_USERNAME"
       description: "Database username"
       label: "Database username"
@@ -38,4 +31,11 @@
       label: "Database password"
       required: true
       default: "sonar"
+      type: "string"
+
+    - variable: "JDBC_URL"
+      description: "Database JDBC URL"
+      label: "Database JDBC URL"
+      required: true
+      default: "jdbc:mysql://dbhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true"
       type: "string"
