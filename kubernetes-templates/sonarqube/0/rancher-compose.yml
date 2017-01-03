@@ -1,0 +1,41 @@
+.catalog:
+  name: "SonarQube"
+  version: "0.1-rancher1"
+  description: "The leading open source platform for continuous code quality."
+  maintainer: "Alexey Baikov <sysboss@mail.com>"
+  minimum_rancher_version: v1.2.0
+  questions:
+    - variable: "namespace"
+      description: "Namespace name"
+      label: "Namespace"
+      required: true
+      default: "default"
+      type: "string"
+
+    - variable: "ContainerVersion"
+      description: "SonarQube Docker container version"
+      label: "SonarQube Version"
+      required: true
+      default: "6.2"
+      type: "string"
+
+    - variable: "JDBC_URL"
+      description: "Database JDBC URL"
+      label: "Database JDBC URL"
+      required: true
+      default: "jdbc:mysql://dbhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true"
+      type: "string"
+
+    - variable: "JDBC_USERNAME"
+      description: "Database username"
+      label: "Database username"
+      required: true
+      default: "sonar"
+      type: "string"
+
+    - variable: "JDBC_PASSWORD"
+      description: "Database password"
+      label: "Database password"
+      required: true
+      default: "sonar"
+      type: "string"

@@ -1,0 +1,6 @@
+name: "SonarQube"
+description: "The leading open source platform for continuous code quality."
+version: 0.1-rancher1
+category: Scanners
+maintainer: "Alexey Baikov <sysboss@mail.ru>"
+projectURL: "https://github.com/feedvisor/SonarQube.git"

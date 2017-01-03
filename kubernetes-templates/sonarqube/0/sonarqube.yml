@@ -1,0 +1,43 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sonarqube
+  namespace: ${namespace}
+  labels:
+    app: sonarqube
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sonarqube
+    spec:
+      containers:
+      - name: sonarqube
+        image: sonarqube:${ContainerVersion}
+        imagePullPolicy: Always
+        env:
+          - name: SONARQUBE_JDBC_USERNAME
+            value: "${JDBC_USERNAME}"
+          - name: SONARQUBE_JDBC_PASSWORD
+            value: "${JDBC_PASSWORD}"
+          - name: SONARQUBE_JDBC_URL
+            value: "${JDBC_URL}"
+        ports:
+          - containerPort: 9000
+            protocol: TCP
+            name: sonar
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: sonarqube
+  name: sonarqube
+spec:
+  ports:
+    - port: 9000
+      targetPort: 9000
+      name: sonar
+  selector:
+    app: sonarqube
